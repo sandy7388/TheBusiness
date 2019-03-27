@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+    <EditText
+        android:id="@+id/edt_item_name"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:inputType="phone"/>
+    <EditText
+        android:id="@+id/edt_item_qty"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:inputType="phone"/>
+    <EditText
+        android:id="@+id/edt_price_unit"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="right" />
+    <TextView
+        android:id="@+id/tv_total_amount"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+    <ImageView
+        android:id="@+id/iv_remove_items"
+        android:visibility="visible"
+        android:layout_marginRight="05dp"
+        android:scaleType="fitEnd"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:src="@drawable/remove_items"
+        android:layout_weight="0.5"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+</LinearLayout>

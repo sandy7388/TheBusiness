@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="05dp"
+    app:cardCornerRadius="2.0dip"
+    app:cardElevation="2.0dip">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+        android:layout_width="5dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_red_dark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_item_click"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="05dp"
+                    android:layout_marginRight="05dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="03dp"
+                        android:visibility="visible">
+
+                        <View
+                            android:layout_width="5dp"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/holo_red_dark"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/spacing_xsmall"
+                            android:layout_marginRight="@dimen/spacing_xsmall"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:text="Invoice No.:"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="15dp" />
+
+                                <TextView
+                                    android:id="@+id/tv_invoice_no_adapter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:text="1"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="15dp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_invoice_date_adapter"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="end|center_vertical"
+                                android:text="12/01/2019"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="0dp"
+                    android:orientation="horizontal">
+
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/spacing_xsmall"
+                        android:layout_marginBottom="@dimen/spacing_xsmall"
+                        android:background="@color/colorPrimary"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xsmall"
+                        android:layout_marginRight="@dimen/spacing_xsmall"
+                        android:layout_marginBottom="@dimen/spacing_xsmall"
+                        android:layout_weight="1.0"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="3dp">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:weightSum="2">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1.0"
+                                        android:gravity="center_vertical|left"
+                                        android:text="Total:"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textSize="16dp" />
+
+                                    <TextView
+                                        android:id="@+id/tv_invoice_total_adapter"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center_vertical|left"
+                                        android:text="17000.0"
+                                        android:textColor="@color/colorPrimary" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginTop="05dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1.0"
+                                        android:gravity="center_vertical|left"
+                                        android:text="Received:"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textSize="16dp" />
+
+                                    <TextView
+                                        android:id="@+id/tv_invoice_received_adapter"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center_vertical|left"
+                                        android:text="17000.0"
+                                        android:textColor="@color/colorPrimary" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/spacing_middle"
+                        android:layout_height="0.0dip" />
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/spacing_xsmall"
+                        android:layout_marginBottom="@dimen/spacing_xsmall"
+                        android:background="@android:color/holo_red_dark"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/spacing_xsmall"
+                        android:layout_marginRight="@dimen/spacing_xsmall"
+                        android:layout_marginBottom="@dimen/spacing_xsmall"
+                        android:layout_weight="1.0"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="03dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center_vertical|left"
+                                    android:layout_weight="1.0"
+                                    android:gravity="center"
+                                    android:text="Balance:"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="16dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginTop="05dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <ImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:padding="05dp"
+                                        android:scaleType="fitEnd"
+                                        android:src="@drawable/rupee_indian" />
+
+                                    <TextView
+                                        android:id="@+id/tv_invoice_balance_adapter"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center_vertical|left"
+                                        android:text="0.00"
+                                        android:textColor="#8d9cae"
+                                        android:textSize="17dp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/ll_item_details"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginLeft="05dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="05dp"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="Item Details"
+                    android:textColor="#fff" />
+
+                <ImageView
+                    android:id="@+id/iv_invoice_down_arrow"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="7dp"
+                    android:layout_weight="1"
+                    android:paddingRight="10dp"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/drop_down_arrow" />
+
+                <ImageView
+                    android:id="@+id/iv_invoice_up_arrow"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="7dp"
+                    android:layout_weight="1"
+                    android:paddingRight="10dp"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/caret_arrow_up"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_item_list_invoice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="05dp"
+                android:layout_marginRight="05dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <HorizontalScrollView
+                    android:fillViewport="true"
+                    android:scrollbars="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorPrimary"
+                            android:orientation="horizontal"
+                            android:weightSum="10">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3.5"
+                                android:gravity="center"
+                                android:text="Item Name"
+                                android:textColor="#fff"
+                                android:textSize="13dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.5"
+                                android:gravity="center"
+                                android:text="Qty"
+                                android:textColor="#fff"
+                                android:textSize="13dp" />
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.5"
+                                android:gravity="center"
+                                android:text="Price"
+                                android:textColor="#fff"
+                                android:textSize="13dp" />
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.5"
+                                android:gravity="center"
+                                android:text="Tax"
+                                android:textColor="#fff"
+                                android:textSize="13dp" />
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:text="Amount"
+                                android:textColor="#fff"
+                                android:textSize="13dp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#8d9cae" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_item_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#8d9cae" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:orientation="horizontal"
+                            android:visibility="visible"
+                            android:weightSum="5">
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#8d9cae" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Qty Total"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="13dp" />
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#8d9cae" />
+
+                            <TextView
+                                android:id="@+id/tv_total_qty"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="13dp" />
+
+                            <View
+                                android:visibility="gone"
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#8d9cae" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text=""
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="13dp" />
+
+                            <View
+                                android:visibility="gone"
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#8d9cae" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Subtotal"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="13dp" />
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#8d9cae" />
+
+                            <TextView
+                                android:id="@+id/tv_total_subtotal"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="13dp" />
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#8d9cae" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#8d9cae" />
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="right"
+                android:layout_marginLeft="05dp"
+                android:layout_marginTop="05dp"
+                android:layout_marginRight="05dp"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="10dp"
+                    android:padding="05dp"
+                    android:src="@drawable/eye" />
+
+                <ImageView
+                    android:id="@+id/iv_printer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="05dp"
+                    android:src="@drawable/printer" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="05dp"
+                    android:src="@drawable/share" />
+
+                <ImageView
+                    android:id="@+id/iv_convert_to_sale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="05dp"
+                    android:src="@drawable/menu" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

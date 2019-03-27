@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/cl_add_payment"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_payment"
+            layout="@layout/toolbar_common"
+            android:visibility="visible" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:padding="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <fr.ganfra.materialspinner.MaterialSpinner
+                        android:nextFocusDown="@id/autoTextCustomer"
+                        android:id="@+id/sp_party_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <com.example.admin.demo.util.InstantAutoComplete
+                        android:nextFocusDown="@id/edit_payment_date"
+                        android:inputType="text|textCapWords"
+                        android:id="@+id/autoTextCustomer"
+                        android:hint="Customer Name"
+                        android:imeOptions="actionNext"
+                        android:textSize="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:focusable="false"
+                            android:inputType="date"
+                            android:singleLine="true"
+                            android:nextFocusDown="@id/edit_balance_amount"
+                            android:id="@+id/edit_payment_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Payment Date" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:enabled="false"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:nextFocusDown="@id/edit_paid_amount"
+                            android:id="@+id/edit_previous_balance_amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Previous Balance Amount" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:nextFocusDown="@id/edit_balance_amount"
+                            android:id="@+id/edit_paid_amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Paid Amount" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:enabled="false"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:nextFocusDown="@id/edit_payment_reference"
+                            android:id="@+id/edit_balance_amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Balance Amount" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:nextFocusDown="@id/sp_payment_mode"
+                            android:id="@+id/edit_payment_reference"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Payment Reference" />
+
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <fr.ganfra.materialspinner.MaterialSpinner
+                        android:nextFocusDown="@id/edit_check_deposit_date"
+                        android:id="@+id/sp_payment_mode"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_cheque_deposit_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:focusable="false"
+                            android:inputType="date"
+                            android:singleLine="true"
+                            android:id="@+id/edit_check_deposit_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Check deposit Date" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btn_delete_payment"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FF1DA1FF"
+            android:text="DELETE"
+            android:textColor="#fff" />
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btn_edit_payment"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="EDIT"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/btn_cancel_payment"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FF1DA1FF"
+            android:text="RESET"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/btn_save_payment"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="SAVE"
+            android:textColor="#fff" />
+
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

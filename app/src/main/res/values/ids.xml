@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="edtItemName" type="id"/>
+    <item name="edtItemQty" type="id"/>
+    <item name="edtItemPrice" type="id"/>
+    <item name="tvItemAmount" type="id"/>
+    <item name="ivRemoveItems" type="id"/>
+</resources>

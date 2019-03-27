@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_tax_spinner"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_margin="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/tv_tax_name"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/name_text"
+            android:textColor="#ff444444"
+            android:textSize="16.0sp" />
+
+        <TextView
+            android:id="@+id/tv_tax_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.0dip"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/view_tax_row_tv_tax_rate_text"
+            android:textColor="#ff666666"
+            android:textSize="16.0sp" />
+    </LinearLayout>
+
+    <TextView
+        android:background="#f2f2f2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+
+</LinearLayout>

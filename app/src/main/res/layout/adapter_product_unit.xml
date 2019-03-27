@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_conversion_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:orientation="vertical"
+        android:padding="2dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:weightSum="3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="@color/commonblue"
+                    android:gravity="center_vertical"
+                    android:id="@+id/name_product_unit"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Test"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:textColor="@color/commonblue"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:id="@+id/name_unit_short"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Test"
+                    android:textSize="16dp" />
+
+
+                <TextView
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/pencil"
+                    android:visibility="visible"
+                    android:id="@+id/iv_edit_unit"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:minHeight="25dp" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:background="#f2f2f2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+            <LinearLayout
+                android:id="@+id/ll_hide_show"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_unit_conversion_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

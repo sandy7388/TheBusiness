@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/from_to_date_layout" />
+
+        <include layout="@layout/firm_chooser_for_reports" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2.0dip"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/reports_side_padding"
+            android:paddingRight="@dimen/reports_side_padding">
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.0"
+                android:text="@string/party_name_with_underline"
+                android:textSize="15.0sp" />
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.0"
+                android:gravity="right"
+                android:text="@string/taxSaleAmount"
+                android:textSize="15.0sp" />
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.0"
+                android:gravity="right"
+                android:text="@string/taxPurchaseAmount"
+                android:textSize="15.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/reports_side_padding"
+            android:paddingRight="@dimen/reports_side_padding"
+            android:paddingBottom="@dimen/reports_side_padding">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/taxtable"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="8.0"
+                android:fadeScrollbars="false"
+                android:scrollbarStyle="outsideInset"
+                android:scrollbars="vertical" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip"
+                android:layout_marginTop="1.0dip"
+                android:layout_marginBottom="1.0dip"
+                android:background="@color/separatorColor" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4.0dip"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.0"
+                    android:text="@string/total_tax"
+                    android:textColor="@color/black"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:id="@+id/totalSaleTaxAmount"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:gravity="right"
+                    android:text="@string/dummy_amount_text"
+                    android:textColor="@color/black"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:id="@+id/totalPurchaseTaxAmount"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:gravity="right"
+                    android:text="@string/dummy_amount_text"
+                    android:textColor="@color/black"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

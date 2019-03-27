@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "778755846730",
+    "firebase_url": "https://the-business-d92d5.firebaseio.com",
+    "project_id": "the-business-d92d5",
+    "storage_bucket": "the-business-d92d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778755846730:android:ce2dab474ef91f7b",
+        "android_client_info": {
+          "package_name": "com.example.admin.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778755846730-pg0cbcq3cd8uis6kiuv7vtl55tam5n91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUjhIkY2QZw4AtwoqD_Cu07qeiWXmuA8g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

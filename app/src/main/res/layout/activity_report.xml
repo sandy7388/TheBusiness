@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.ReportActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:id="@+id/toolbar_report_list"
+            layout="@layout/toolbar_common"
+            android:visibility="visible" />
+
+        <ListView
+            android:visibility="gone"
+            android:id="@+id/list_report"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ListView>
+
+        <LinearLayout
+            android:layout_margin="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_vehicle_report"
+                    android:paddingLeft="15dp"
+                    android:background="@color/commonblue"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:padding="05dp"
+                        android:src="@mipmap/vehicle_load"
+                        android:layout_marginRight="05dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" />
+
+                    <TextView
+                        android:gravity="left|center_vertical"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:text="Vehicle Load Report"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_payment_report"
+                    android:paddingLeft="15dp"
+                    android:background="@color/commonblue"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:padding="05dp"
+                        android:src="@mipmap/payment_report"
+                        android:layout_marginRight="05dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" />
+
+                    <TextView
+                        android:gravity="left|center_vertical"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:text="Payment Collection Report"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_nxt_order_report"
+                    android:paddingLeft="15dp"
+                    android:background="@color/commonblue"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:padding="05dp"
+                        android:src="@mipmap/next_day"
+                        android:layout_marginRight="05dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" />
+
+                    <TextView
+                        android:gravity="left|center_vertical"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:text="Next Day Order Report"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_sale_report"
+                    android:paddingLeft="15dp"
+                    android:background="@color/commonblue"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:padding="05dp"
+                        android:src="@mipmap/sales_report"
+                        android:layout_marginRight="05dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" />
+
+                    <TextView
+                        android:gravity="left|center_vertical"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:text="Sales Report"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

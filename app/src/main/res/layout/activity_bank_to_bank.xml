@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:design="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_bank_to_bank"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_bank_to_bank"
+            layout="@layout/toolbar_common"
+            android:visibility="visible" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/bottom_button_layout">
+
+            <LinearLayout
+                android:id="@+id/add_edit_item_adjustment"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="16.0sp"
+                android:paddingRight="16.0sp">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_marginTop="30.0dip"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5.0dip"
+                        android:text="@string/from_bank"
+                        android:textColor="@color/actionbarcolor"
+                        android:textSize="12.0sp" />
+
+                    <Spinner
+                        android:id="@+id/sp_from_bank"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dropdown" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_marginTop="30.0dip"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5.0dip"
+                        android:text="@string/to_bank"
+                        android:textColor="@color/actionbarcolor"
+                        android:textSize="12.0sp" />
+
+                    <Spinner
+                        android:id="@+id/sp_to_bank"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dropdown" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_marginTop="30.0dip"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/amount_text"
+                        android:theme="@style/EditTextTheme"
+                        design:hintAnimationEnabled="true"
+                        design:hintEnabled="true">
+
+                        <EditText
+                            android:id="@+id/edt_transfer_amount"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="numberDecimal"
+                            android:theme="@style/EditTextTheme" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_marginTop="30.0dip"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/transfer_date"
+                        android:theme="@style/EditTextTheme"
+                        design:hintAnimationEnabled="true"
+                        design:hintEnabled="true">
+
+                        <EditText
+                            android:id="@+id/edt_transfer_date"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:focusable="false"
+                            android:inputType="date"
+                            android:theme="@style/EditTextTheme" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_marginTop="30.0dip"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/activity_bank_adjustment_adjustment_details_hint"
+                        android:theme="@style/EditTextTheme"
+                        design:hintAnimationEnabled="true"
+                        design:hintEnabled="true">
+
+                        <EditText
+                            android:id="@+id/edt_transfer_description"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:imeOptions="actionNext|flagNoExtractUi"
+                            android:inputType="textCapSentences"
+                            android:theme="@style/EditTextTheme" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_button_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_bg"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_delete_transfer"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1.0"
+            android:background="@color/white"
+            android:text="@string/delete"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_edit_transfer"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1.0"
+            android:background="@color/actionbarcolor"
+            android:text="@string/edit"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_save_transfer"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1.0"
+            android:background="#FF1DA1FF"
+            android:text="@string/btn_save_text"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/pb_add_bank_transfer"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/report_firm_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8.0dip"
+    android:layout_marginRight="8.0dip"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingBottom="10.0dip">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginRight="10.0dip"
+        android:gravity="center"
+        android:text="@string/firm_name"
+        android:textColor="@color/actionbarcolor"
+        android:textSize="12.0sp" />
+
+    <Spinner
+        android:id="@+id/report_firmName"
+        android:layout_width="0.0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="2.0"
+        android:background="@drawable/drop_down"
+        android:spinnerMode="dropdown" />
+</LinearLayout>

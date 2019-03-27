@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:design="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/cl_add_item">
+
+    <LinearLayout
+        android:layout_marginBottom="50dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:id="@+id/toolbar_add_item_list"
+            layout="@layout/toolbar_common"
+            android:visibility="visible" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_add_party"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="0dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:visibility="visible"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="2dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical"
+                    android:padding="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:imeOptions="actionNext"
+                                android:id="@+id/et_category_name"
+                                style="@android:style/Widget.Holo.Light.Spinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:gravity="top"
+                                android:hint="Select Category"
+                                android:longClickable="false"
+                                android:singleLine="true"
+                                android:text="" />
+
+                        </android.support.design.widget.TextInputLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="5dp"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/holo_red_dark" />
+
+
+                            <Spinner
+                                android:id="@+id/sp_category"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+
+                        </LinearLayout>
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible">
+                            <EditText
+                                android:imeOptions="actionNext"
+                                android:textSize="16dp"
+                                android:gravity="top"
+                                android:text=""
+                                android:inputType="textCapWords"
+                                android:singleLine="true"
+                                android:id="@+id/et_item_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Product Name" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:visibility="visible">
+                            <EditText
+                                android:nextFocusDown="@id/et_unit_name"
+                                android:textSize="16dp"
+                                android:gravity="top"
+                                android:text=""
+                                android:inputType="textCapWords"
+                                android:singleLine="true"
+                                android:id="@+id/et_short_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Short Name" />
+                        </android.support.design.widget.TextInputLayout>
+                        <LinearLayout
+                            android:weightSum="2"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="5dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/holo_red_dark" />
+
+
+                                <Spinner
+                                    android:id="@+id/sp_unit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+
+                            </LinearLayout>
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                android:visibility="gone">
+
+                                <EditText
+                                    android:imeOptions="actionNext"
+                                    android:id="@+id/et_unit_name"
+                                    style="@android:style/Widget.Holo.Light.Spinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:gravity="top"
+                                    android:hint="Select Unit"
+                                    android:longClickable="false"
+                                    android:singleLine="true"
+                                    android:text="" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+                            <Button
+                                android:id="@+id/btn_manage_unit"
+                                android:layout_marginLeft="05dp"
+                                android:textColor="#fff"
+                                android:background="@color/colorPrimary"
+                                style="@style/Base.TextAppearance.AppCompat.Button"
+                                android:textAllCaps="false"
+                                android:text="Manage Unit"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:visibility="visible">
+                            <EditText
+                                android:imeOptions="actionNext"
+                                android:textSize="16dp"
+                                android:gravity="top"
+                                android:text=""
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:id="@+id/et_barcode"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Item Code/ Barcode" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="311dp"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible">
+                            <EditText
+                                android:imeOptions="actionNext"
+                                android:textSize="16dp"
+                                android:gravity="top"
+                                android:text=""
+                                android:inputType="textCapWords"
+                                android:singleLine="true"
+                                android:id="@+id/et_hsn_sac_code"
+                                android:layout_width="311dp"
+                                android:layout_height="wrap_content"
+                                android:hint="HSN/SAC Code" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/iv_hsn_sac_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/search_add_item_list" />
+
+                    </LinearLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:layout_marginTop="10dp">
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:textSize="16dp"
+                            android:gravity="top"
+                            android:text=""
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:id="@+id/et_sale_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Sale Price" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="textStart"
+                        app:cardBackgroundColor="#f0f0f0"
+                        android:gravity="start">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_margin="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/reports_side_padding_4"
+                                android:text="Tax"
+                                android:textColor="#0b7ba9"
+                                android:textSize="14dp" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+
+                                <Spinner
+                                    android:visibility="gone"
+                                    style="@android:style/Widget.Holo.Light.Spinner"
+                                    android:id="@+id/sp_gst"
+                                    android:layout_width="75dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:minHeight="40dp"
+                                    android:textColor="@color/commonblue"
+                                    android:textSize="16dp" />
+
+                                <Spinner
+                                    android:textColor="@color/commonblue"
+                                    android:minHeight="40dp"
+                                    android:spinnerMode="dropdown"
+                                    android:id="@+id/sp_tax_list"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1.2"
+                                    android:layout_height="wrap_content"/>
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="match_parent"
+                                    android:visibility="gone">
+
+                                    <EditText
+                                        android:id="@+id/et_tax_name"
+                                        style="@android:style/Widget.Holo.Light.Spinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:inputType="textCapWords"
+                                        android:focusableInTouchMode="false"
+                                        android:gravity="top"
+                                        android:hint="Select Tax"
+                                        android:longClickable="false"
+                                        android:singleLine="true"
+                                        android:text="" />
+
+                                </android.support.design.widget.TextInputLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.8"
+                                    android:orientation="vertical">
+
+                                    <RadioGroup
+                                        android:id="@+id/rg_all_tax"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <RadioButton
+                                            android:buttonTint="@color/colorPrimary"
+                                            android:id="@+id/rb_inclusive"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Inclusive Tax" />
+
+                                        <RadioButton
+                                            android:checked="true"
+                                            android:buttonTint="@color/colorPrimary"
+                                            android:id="@+id/rb_exclusive"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Exclusive Tax" />
+
+                                    </RadioGroup>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:layout_marginTop="10dp">
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:textSize="16dp"
+                            android:gravity="top"
+                            android:text=""
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:id="@+id/et_purchase_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Purchase Price" />
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3.0"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2">
+
+                            <EditText
+                                android:imeOptions="actionNext"
+                                android:textSize="16dp"
+                                android:gravity="top"
+                                android:text=""
+                                android:singleLine="true"
+                                android:hint="Opening Stock"
+                                android:id="@+id/et_opening_stock"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="numberDecimal|numberSigned"
+                                />
+                        </android.support.design.widget.TextInputLayout>
+                        <TextView
+                            android:layout_weight="0.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6.0dip"
+                            android:layout_marginRight="6.0dip"
+                            android:text="@string/as_of"
+                            android:textSize="18dp" />
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.3"
+                            design:hintAnimationEnabled="true"
+                            design:hintEnabled="true">
+
+                            <EditText
+                                android:imeOptions="actionNext"
+                                android:textSize="16dp"
+                                android:hint="Date"
+                                android:id="@+id/et_opening_stock_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.0"
+                                android:focusable="false"
+                                android:inputType="date" />
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            design:hintAnimationEnabled="true"
+                            design:hintEnabled="true">
+
+
+                            <EditText
+                                android:imeOptions="actionNext"
+                                android:textSize="16dp"
+                                android:gravity="top"
+                                android:text=""
+                                android:inputType="numberDecimal"
+                                android:singleLine="true"
+                                android:id="@+id/et_price_per_unit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="At Price/unit" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            design:hintAnimationEnabled="true"
+                            design:hintEnabled="true">
+
+
+                            <EditText
+                                android:imeOptions="actionNext"
+                                android:textSize="16dp"
+                                android:gravity="top"
+                                android:text=""
+                                android:inputType="numberDecimal"
+                                android:singleLine="true"
+                                android:id="@+id/et_minimum_stack_qty"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Minimum Stock Quantity" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:visibility="gone"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            design:hintAnimationEnabled="true"
+                            design:hintEnabled="true">
+
+
+                            <EditText
+                                android:imeOptions="actionDone"
+                                android:textSize="16dp"
+                                android:gravity="top"
+                                android:text=""
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:id="@+id/et_serial_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Serial Number" />
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:weightSum="2"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btn_delete_item"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FF1DA1FF"
+            android:text="Delete"
+            android:textColor="#fff" />
+
+        <Button
+            android:visibility="gone"
+            android:layout_weight="1"
+            android:id="@+id/btn_edit_item"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/commonblue"
+            android:text="Edit"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/btn_clear_item"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FF1DA1FF"
+            android:text="RESET"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/btn_save_item"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="SAVE"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/pb_add_product"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+
+</android.support.design.widget.CoordinatorLayout>

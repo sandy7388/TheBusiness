@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.PurchaseActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar_purchase"
+            layout="@layout/toolbar_common"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_marginTop="02dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+                <EditText
+                    android:layout_margin="05dp"
+                    android:id="@+id/et_search_party"
+                    android:imeOptions="actionSearch"
+                    android:textSize="16dp"
+                    android:gravity="top"
+                    android:text=""
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Party Name" />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginLeft="05dp"
+                android:textSize="13dp"
+                android:textFontWeight="1"
+                android:paddingLeft="05dp"
+                style="@style/Base.Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#075185"
+                android:text="Party Name"
+                android:textAlignment="textStart"
+                android:gravity="start|center_vertical" />
+
+            <TextView
+                android:layout_marginRight="05dp"
+                android:textSize="13dp"
+                android:textFontWeight="1"
+                android:paddingRight="05dp"
+                style="@style/Base.Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#075185"
+                android:text="Amount"
+                android:textAlignment="textEnd"
+                android:gravity="end|center_vertical" />
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_margin="05dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_party_list"
+                android:layout_width="match_parent"
+                android:clipToPadding="false"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true" />
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_error_common_recyclerView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="8dp"
+                    android:gravity="center_horizontal"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btn_retry_common_recyclerView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Retry"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/pb_error_common_recyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="32dp"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingbutton_addparty_purchase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_margin="11dp"
+        android:src="@drawable/fab_add_icon"
+        android:visibility="visible"
+        app:backgroundTint="@color/primary"
+        app:fabSize="normal" />
+
+
+</android.support.design.widget.CoordinatorLayout>

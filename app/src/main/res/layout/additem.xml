@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2017. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  ~ Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
+  ~ Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
+  ~ Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
+  ~ Vestibulum commodo. Ut rhoncus gravida arcu.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_experience_add_resume"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:foreground="?attr/selectableItemBackground"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <View
+                android:layout_width="0.1dp"
+                android:layout_height="match_parent"
+                android:alpha="0.5"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/tv_product_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="Title"
+                android:textSize="11sp"
+                android:textStyle="normal" />
+
+           <!-- <View
+                android:layout_width="0.1dp"
+                android:layout_height="match_parent"
+                android:alpha="0.5"
+                android:background="@android:color/black" />-->
+
+            <EditText
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_border_edittext"
+                android:gravity="center"
+                android:hint="Add Price"
+                android:textSize="11sp"
+                android:textStyle="normal" />
+            <!--
+                        <View
+                            android:layout_width="0.1dp"
+                            android:layout_height="match_parent"
+                            android:alpha="0.5"
+                            android:background="@android:color/black" />-->
+
+            <EditText
+                android:id="@+id/tv_qty"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_border_edittext"
+                android:gravity="center"
+
+                android:hint="Add Qty"
+                android:textSize="11sp"
+                android:textStyle="normal" />
+
+            <View
+                android:layout_width="0.1dp"
+                android:layout_height="match_parent"
+                android:alpha="0.5"
+                android:background="@android:color/black" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:alpha="0.5"
+            android:background="@android:color/black" />
+    </LinearLayout>
+
+
+</LinearLayout>

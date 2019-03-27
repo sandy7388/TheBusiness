@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip"
+            android:background="@color/actionbarcolor"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="3.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16.0dip"
+                android:layout_marginRight="5.0dip"
+                android:text="Balance"
+                android:textColor="@android:color/white"
+                android:textSize="16.0sp" />
+
+            <TextView
+                android:id="@+id/currentBalance_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="1000"
+                android:textColor="@android:color/white"
+                android:textSize="16.0sp" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/adj_bank_detail_recycler_view"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="7.0"
+            android:fadeScrollbars="false"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_fab_tint"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:alpha="0.0"
+        android:background="@android:color/black"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/fabLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/standard_12"
+        android:layout_marginBottom="@dimen/standard_12"
+        android:clipToPadding="false"
+        android:gravity="center_vertical"
+        android:padding="@dimen/standard_12"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card"
+            android:gravity="center"
+            android:padding="10.0dip"
+            android:text="Adjust Bank Account" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_adjust_bank_act"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:src="@drawable/item_adjust_icon"
+            android:tint="@color/white"
+            app:backgroundTint="@color/actionbarcolor"
+            app:fabSize="mini" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fabLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/standard_12"
+        android:layout_marginBottom="@dimen/standard_12"
+        android:clipToPadding="false"
+        android:gravity="center_vertical"
+        android:padding="@dimen/standard_12"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card"
+            android:gravity="center"
+            android:padding="10.0dip"
+            android:text="Transfer Bank" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_tnfr_to_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:src="@drawable/bank_to_bankxxxhdpi"
+            android:tint="@color/white"
+            app:backgroundTint="@color/actionbarcolor"
+            app:fabSize="mini" />
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="16.0dip"
+        android:layout_marginBottom="16.0dip"
+        android:src="@drawable/fab_add_icon"
+        android:visibility="visible"
+        app:backgroundTint="#FF1DA1FF"
+        app:fabSize="normal" />
+</RelativeLayout>

@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_marginBottom="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_add_party"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="0dp"
+                    android:visibility="visible"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="8dp">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_marginTop="10dp"
+                            android:gravity="left"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:weightSum="12">
+
+                            <LinearLayout
+                                android:gravity="right"
+                                android:weightSum="2"
+                                android:layout_weight="2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+                                <android.support.v7.widget.CardView
+                                    android:id="@+id/card_am"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:id="@+id/tv_am"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="AM"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textStyle="bold" />
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:id="@+id/card_pm"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:foreground="?android:attr/selectableItemBackground">
+
+                                    <TextView
+                                        android:id="@+id/tv_pm"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="PM"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textStyle="bold" />
+                                </android.support.v7.widget.CardView>
+
+                            </LinearLayout>
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_weight="10"
+                                android:id="@+id/iv_items_close_button"
+                                android:layout_margin="05dp"
+                                android:gravity="right"
+                                android:src="@drawable/close_button"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="2dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <com.example.admin.demo.util.InstantAutoComplete
+                                    android:inputType="text|textCapWords"
+                                    android:id="@+id/autoCompleteTextViewProduct"
+                                    android:hint="Product Name"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@id/et_qty_item"
+                                    android:textSize="16dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
+
+                                    <EditText
+                                        android:focusableInTouchMode="false"
+                                        android:focusable="false"
+                                        style="@android:style/Widget.Holo.Light.Spinner"
+                                        android:id="@+id/et_product_name_item"
+                                        android:textColorHint="@color/colorPrimary"
+                                        android:textSize="16dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Product Name"
+                                        android:singleLine="true"
+                                        android:text="" />
+
+                                </android.support.design.widget.TextInputLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:weightSum="2"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="visible"
+                                    android:layout_weight="1.3">
+
+                                    <EditText
+                                        android:inputType="numberDecimal"
+                                        android:id="@+id/et_qty_item"
+                                        android:textColorHint="@color/colorPrimary"
+                                        android:textSize="16dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Quantity"
+                                        android:singleLine="true"
+                                        android:text="" />
+
+                                </android.support.design.widget.TextInputLayout>
+
+                                <Spinner
+                                    android:id="@+id/sp_unit_list"
+                                    android:layout_weight="0.7"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent">
+
+                                </Spinner>
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone"
+                                    android:layout_weight="0.7">
+
+                                    <EditText
+                                        android:focusableInTouchMode="false"
+                                        android:focusable="false"
+                                        style="@android:style/Widget.Holo.Light.Spinner"
+                                        android:id="@+id/et_unit_item"
+                                        android:textColorHint="@color/colorPrimary"
+                                        android:textSize="16dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Select Unit"
+                                        android:singleLine="true"
+                                        android:text="" />
+
+                                </android.support.design.widget.TextInputLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="visible">
+
+                                    <EditText
+                                        android:inputType="numberDecimal"
+                                        android:id="@+id/et_free_qty_item"
+                                        android:textColorHint="@color/colorPrimary"
+                                        android:textSize="16dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Free Quantity"
+                                        android:singleLine="true"
+                                        android:text="0" />
+
+                                </android.support.design.widget.TextInputLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="visible">
+
+                                    <EditText
+                                        android:id="@+id/et_price_per_unit_item"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Price"
+                                        android:inputType="numberDecimal"
+                                        android:singleLine="true"
+                                        android:text=""
+                                        android:textColorHint="@color/colorPrimary"
+                                        android:textSize="16dp" />
+
+                                </android.support.design.widget.TextInputLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Subtotal(Rate x Quantity)"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="16dp" />
+
+                                <TextView
+                                    android:id="@+id/tv_subtotal_item"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginRight="20dp"
+                                    android:text="0.00"
+                                    android:textSize="16dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:weightSum="2"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="end|center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:gravity="center_vertical"
+                                    android:layout_weight="1.0"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:text="Discount(%)"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="16dp" />
+
+                                <LinearLayout
+                                    android:weightSum="2"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:orientation="horizontal">
+
+                                    <EditText
+                                        android:textSize="16dp"
+                                        android:id="@+id/et_discount_percentage_item"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:inputType="numberDecimal"
+                                        android:maxLength="10"
+                                        android:singleLine="true"
+                                        android:text="0" />
+
+                                    <EditText
+                                        android:textSize="16dp"
+                                        android:id="@+id/et_discount_amount_item"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:inputType="numberDecimal"
+                                        android:maxLength="10"
+                                        android:singleLine="true"
+                                        android:text="0" />
+
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:weightSum="2"
+                                android:gravity="end"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <Spinner
+                                    android:spinnerMode="dropdown"
+                                    android:id="@+id/sp_tax_group"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1.3"
+                                    android:layout_height="match_parent"
+                                    android:visibility="visible"/>
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="match_parent"
+                                    android:visibility="gone">
+
+                                    <EditText
+                                        android:textColor="@color/colorPrimary"
+                                        android:textColorHint="@color/colorPrimary"
+                                        android:textSize="16dp"
+                                        android:id="@+id/et_item_tax_name"
+                                        style="@android:style/Widget.Holo.Light.Spinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:inputType="textCapWords"
+                                        android:focusableInTouchMode="false"
+                                        android:gravity="top"
+                                        android:hint="Select Tax"
+                                        android:longClickable="false"
+                                        android:singleLine="true"
+                                        android:text="" />
+
+                                </android.support.design.widget.TextInputLayout>
+
+                                <TextView
+                                    android:id="@+id/tv_select_tax_item"
+                                    android:layout_weight="0.7"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="end|center_vertical"
+                                    android:text="0.00"
+                                    android:textSize="16dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:weightSum="2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="10dp">
+
+                                <TextView
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+
+                                    android:text="Total Amount"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="16dp" />
+
+                                <TextView
+                                    android:id="@+id/tv_total_amount_item"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="end"
+                                    android:text="0.00"
+                                    android:textSize="16dp" />
+                            </LinearLayout>
+                            <View
+                                android:layout_marginTop="15dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#bdbdbd" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
+            </android.support.v4.widget.NestedScrollView>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btn_delete_item"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="DELETE"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/btn_add_item"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="save"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/btn_save_and_new_item"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@android:color/transparent"
+            android:text="Save &amp; new"
+            android:textColor="@color/colorPrimary"/>
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

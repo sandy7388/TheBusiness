@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator_add_party"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_marginBottom="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_addParty"
+            layout="@layout/toolbar_common"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/rl_trip_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="2dp"
+                app:cardElevation="7dp"
+                app:cardUseCompatPadding="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <TableRow
+                            android:id="@+id/row_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_marginTop="2dp"
+
+                            android:background="#f4f3f3">
+
+                            <TextView
+                                android:id="@+id/tv_partyadd"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="#f2f2f2"
+                                android:gravity="center"
+                                android:padding="7dp"
+                                android:text="Party"
+                                android:textColor="#000" />
+
+                            <TextView
+                                android:id="@+id/tv_route"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="2dp"
+                                android:layout_weight="1"
+                                android:background="#fff"
+                                android:gravity="center"
+                                android:padding="7dp"
+                                android:text="Route"
+                                android:textColor="#000" />
+
+                            <TextView
+                                android:id="@+id/tv_trip"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="#fff"
+                                android:gravity="center"
+                                android:padding="7dp"
+                                android:text="Trip"
+                                android:textColor="#000" />
+
+                        </TableRow>
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#f2f2f2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_add_party"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="0dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:visibility="visible"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="2dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:visibility="visible"
+                    android:id="@+id/ll_party_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/et_party_route_name"
+                            style="@android:style/Widget.Holo.Light.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="top"
+                            android:hint="All Route"
+                            android:longClickable="false"
+                            android:singleLine="true"
+                            android:text="" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="5dp"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/holo_red_dark" />
+
+
+                        <Spinner
+                            android:id="@+id/sp_route_name_party"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_marginTop="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="5dp"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/holo_red_dark" />
+
+
+                        <Spinner
+                            android:id="@+id/sp_trip_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/et_party_trip_name"
+                            style="@android:style/Widget.Holo.Light.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="top"
+                            android:hint="All Trip"
+                            android:longClickable="false"
+                            android:singleLine="true"
+                            android:text="" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible">
+
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapWords"
+                            android:id="@+id/et_party_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:hint="Party Name"
+                            android:singleLine="true"
+                            android:text="" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible">
+
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapWords"
+                            android:id="@+id/et_short_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:hint="Display Name ( Optional )"
+                            android:singleLine="true"
+                            android:text="" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <LinearLayout
+                        android:weightSum="5"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            android:layout_weight="4.2">
+
+                            <EditText
+                                android:imeOptions="actionNext"
+                                android:id="@+id/et_party_mobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="top"
+                                android:hint="Mobile Number"
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:text="" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <TextView
+                            android:layout_weight="0.3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:id="@+id/iv_openContacts"
+                            android:layout_marginLeft="05dp"
+                            android:layout_weight="0.5"
+                            android:src="@drawable/ic_contacts_black_24dp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible">
+
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:id="@+id/et_party_Current_Balance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:hint="Current Balance"
+                            android:inputType="number"
+
+                            android:singleLine="true"
+                            android:text="" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible">
+
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:id="@+id/et_party_as_of"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="top"
+                            android:hint="As Of"
+                            android:singleLine="true"
+                            android:text="" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible">
+
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:id="@+id/et_party_seriel_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:hint="Serial Number"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:text="" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/et_party_party_type"
+                            style="@android:style/Widget.Holo.Light.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="top"
+                            android:hint="All Party Type"
+                            android:longClickable="false"
+                            android:singleLine="true"
+                            android:text="" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="5dp"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/holo_red_dark" />
+
+
+                        <Spinner
+                            android:id="@+id/sp_party_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible">
+
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapWords"
+                            android:id="@+id/et_party_state"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:hint="Party State"
+                            android:singleLine="true"
+                            android:text="Maharashtra" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible">
+
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:inputType="textEmailAddress"
+                            android:id="@+id/et_party_email_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:hint="Email Id"
+                            android:singleLine="true"
+                            android:text="" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible">
+
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:id="@+id/et_party_gistn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:hint="GSTIN"
+                            android:singleLine="true"
+                            android:text="" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible">
+
+                        <EditText
+                            android:imeOptions="actionDone"
+                            android:inputType="textCapWords"
+                            android:id="@+id/et_party_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:hint="Address"
+                            android:singleLine="true"
+                            android:text="" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="8dp"
+                        android:weightSum="2">
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/card_payble"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dp"
+                            android:layout_weight="1"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <TextView
+                                android:id="@+id/tv_payable"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="PAYABLE"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="bold" />
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/card_receivable"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dp"
+                            android:layout_weight="1"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <TextView
+                                android:id="@+id/tv_receivable"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="RECEIVABLE"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="bold" />
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <LinearLayout
+            android:padding="02dp"
+            android:visibility="gone"
+            android:id="@+id/ll_route_trip_label"
+            android:weightSum="3"
+            android:background="#075185"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+            <TextView
+                android:gravity="center_vertical"
+                android:textColor="#fff"
+                android:textSize="15dp"
+                android:id="@+id/tv_route_label"
+                android:text="Route Name"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="15dp"
+                android:id="@+id/tv_trip_label"
+                android:text="Trip Name"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+        <TextView
+            android:visibility="gone"
+            android:padding="05dp"
+            android:id="@+id/v_seperator"
+            android:layout_marginBottom="05dp"
+            android:layout_marginTop="05dp"
+            android:background="@color/activity_background_color"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <RelativeLayout
+            android:id="@+id/ll_route_trip"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ProgressBar
+                    android:id="@+id/pb_list_route"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_trip_route"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingBottom="90dp">
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="end|bottom"
+                android:orientation="vertical">
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/floating_button_add_route"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:layout_margin="16dp"
+                    android:layout_marginBottom="3dp"
+                    android:src="@drawable/fab_add_icon"
+                    android:visibility="visible"
+                    app:backgroundTint="@color/primary"
+                    app:fabSize="normal" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/floating_button_add_trip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_gravity="end|bottom"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/fab_add_icon"
+                    android:visibility="gone"
+                    app:backgroundTint="@color/primary"
+                    app:fabSize="normal" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btn_delete"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FF1DA1FF"
+            android:text="Delete"
+            android:textColor="#fff" />
+
+        <Button
+            android:visibility="gone"
+            android:layout_weight="1"
+            android:id="@+id/btn_edit"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/commonblue"
+            android:text="Edit"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/btn_cancle"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FF1DA1FF"
+            android:text="Cancel"
+            android:textColor="#fff" />
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/btn_submit"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/commonblue"
+            android:text="Submit"
+            android:textColor="#fff" />
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <ProgressBar
+            android:id="@+id/pb_submit"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

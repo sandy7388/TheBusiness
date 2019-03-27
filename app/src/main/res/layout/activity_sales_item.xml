@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:focusable="false"
+    android:id="@+id/cl_add_sale_invoice"
+    android:focusableInTouchMode="false"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_marginBottom="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar_sale"
+                layout="@layout/toolbar_common"
+                android:visibility="visible" />
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="0dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:visibility="visible"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true">
+                    <LinearLayout
+                        android:layout_marginBottom="20dp"
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+
+                        <LinearLayout
+                            android:gravity="right"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <Switch
+                                android:id="@+id/cashOnly"
+                                android:switchPadding="07dp"
+                                android:theme="@style/SwitchTheme"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="right|center_vertical"
+                                android:text="Cash Sale"
+                                android:textColor="@color/colorPrimary" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <com.example.admin.demo.util.InstantAutoComplete
+                                android:inputType="text|textCapWords"
+                                android:id="@+id/autoText"
+                                android:hint="Customer Name"
+                                android:imeOptions="actionNext"
+                                android:textSize="16dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone">
+                                <EditText
+                                    android:visibility="gone"
+                                    android:focusableInTouchMode="false"
+                                    android:focusable="false"
+                                    android:id="@+id/et_customer_name"
+                                    android:textSize="16dp"
+                                    android:textColorHint="@color/colorPrimary"
+                                    android:text=""
+                                    android:singleLine="true"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Customer Name" />
+
+                            </android.support.design.widget.TextInputLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:visibility="visible"
+                                android:layout_weight="1">
+
+                                <EditText
+                                    android:drawablePadding="02dp"
+                                    android:drawableRight="@drawable/calendar"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:inputType="date"
+                                    android:textSize="16dp"
+                                    android:singleLine="true"
+                                    android:textColorHint="@color/colorPrimary"
+                                    android:id="@+id/et_date"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:hint="Date" />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:visibility="visible"
+                                android:layout_weight="1">
+
+                                <EditText
+                                    android:focusableInTouchMode="false"
+                                    android:focusable="false"
+                                    android:textSize="16dp"
+                                    android:singleLine="true"
+                                    android:id="@+id/et_party_balance"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:hint="Party Balance"
+                                    android:textColorHint="@color/colorPrimary" />
+                            </android.support.design.widget.TextInputLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_order_item_details"
+                            android:weightSum="2"
+                            android:background="@color/colorPrimary"
+                            android:layout_marginTop="5dp"
+                            android:visibility="visible"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_margin="02dp"
+                                android:paddingLeft="10dp"
+                                android:text="Item Details"
+                                android:textColor="#fff"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent" />
+                            <ImageView
+                                android:id="@+id/iv_order_item_down_arrow"
+                                android:paddingRight="10dp"
+                                android:layout_margin="7dp"
+                                android:scaleType="fitEnd"
+                                android:src="@drawable/drop_down_arrow"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent" />
+                            <ImageView
+                                android:id="@+id/iv_order_item_up_arrow"
+                                android:visibility="gone"
+                                android:paddingRight="10dp"
+                                android:layout_margin="7dp"
+                                android:scaleType="fitEnd"
+                                android:src="@drawable/caret_arrow_up"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:visibility="visible"
+                            android:id="@+id/ll_order_item_recyclerview"
+                            android:layout_marginTop="05dp"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <android.support.v7.widget.RecyclerView
+                                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                                android:id="@+id/rv_sales_item_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                            <LinearLayout
+                                android:id="@+id/ll_item_sub_total"
+                                android:visibility="gone"
+                                android:layout_marginTop="05dp"
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:background="#8d9cae"
+                                    android:weightSum="4"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:textSize="13dp"
+                                        android:text="Qty Total"
+                                        android:textColor="@color/colorPrimary"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent" />
+                                    <TextView
+                                        android:id="@+id/tv_order_item_total_qty"
+                                        android:gravity="center"
+                                        android:textSize="13dp"
+                                        android:text="12"
+                                        android:textColor="@color/colorPrimary"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content" />
+                                    <TextView
+                                        android:gravity="center"
+                                        android:textSize="13dp"
+                                        android:text="SubTotal:"
+                                        android:textColor="@color/colorPrimary"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content" />
+                                    <TextView
+                                        android:id="@+id/tv_sales_subtotal"
+                                        android:gravity="center"
+                                        android:textSize="13dp"
+                                        android:text="5000"
+                                        android:textColor="@color/colorPrimary"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginTop="05dp"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_add_sales_item"
+                                android:textColor="#8d9cae"
+                                android:text="@string/add_items"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="visible">
+                                <EditText
+                                    android:inputType="numberDecimal"
+                                    android:textSize="16dp"
+                                    android:singleLine="true"
+                                    android:textColorHint="@color/colorPrimary"
+                                    android:id="@+id/edit_party"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:hint="Discount" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:weightSum="2"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:gravity="center_vertical"
+                                android:layout_weight="1.0"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:text="Discount(%)"
+                                android:textSize="16dp" />
+
+                            <LinearLayout
+                                android:weightSum="2"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:textSize="16dp"
+                                    android:id="@+id/et_discount_percentage"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:inputType="numberDecimal"
+                                    android:maxLength="4"
+                                    android:singleLine="true"
+                                    android:text="" />
+
+                                <EditText
+                                    android:textSize="16dp"
+                                    android:id="@+id/et_discount_amount"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:ems="4"
+                                    android:gravity="center"
+                                    android:inputType="numberDecimal"
+                                    android:maxLength="8"
+                                    android:singleLine="true"
+                                    android:text="" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:weightSum="2"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <CheckBox
+                                android:id="@+id/cb_round_off"
+                                android:layout_weight="1"
+                                android:text="Round Off"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent" />
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:visibility="visible">
+                            <EditText
+                                android:id="@+id/et_round_of"
+                                android:gravity="right"
+                                android:inputType="numberDecimal"
+                                android:textSize="16dp"
+                                android:singleLine="true"
+                                android:textColorHint="@color/colorPrimary"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginTop="05dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="visible">
+                                <EditText
+                                    android:id="@+id/et_total_amount"
+                                    android:inputType="numberDecimal"
+                                    android:textSize="16dp"
+                                    android:textColorHint="@color/colorPrimary"
+                                    android:singleLine="true"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Total Amount" />
+                            </android.support.design.widget.TextInputLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/text_input_layout"
+                                android:visibility="visible">
+                                <EditText
+                                    android:text=""
+                                    android:id="@+id/et_received_amount"
+                                    android:inputType="numberDecimal"
+                                    android:textSize="16dp"
+                                    android:singleLine="true"
+                                    android:textColorHint="@color/colorPrimary"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:visibility="visible">
+                                <EditText
+                                    android:id="@+id/et_balance"
+                                    android:inputType="numberDecimal"
+                                    android:textSize="16dp"
+                                    android:singleLine="true"
+                                    android:textColorHint="@color/colorPrimary"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="Balance" />
+                            </android.support.design.widget.TextInputLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="05dp"
+                            android:orientation="horizontal">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="visible">
+
+                                <EditText
+                                    android:id="@+id/et_payment_type"
+                                    android:textColorHint="@color/colorPrimary"
+                                    android:textSize="16dp"
+                                    style="@android:style/Widget.Holo.Light.Spinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:gravity="top"
+                                    android:hint="Payment Type"
+                                    android:longClickable="false"
+                                    android:singleLine="true"
+                                    android:text="Cash" />
+
+                            </android.support.design.widget.TextInputLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/ll_cheque_deposit_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="05dp"
+                            android:orientation="horizontal">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="visible">
+
+                                <EditText
+                                    android:inputType="date"
+                                    android:id="@+id/et_cheque_deposit_date"
+                                    android:textColorHint="@color/colorPrimary"
+                                    android:textSize="16dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:gravity="top"
+                                    android:hint="Cheque Deposit Date"
+                                    android:longClickable="false"
+                                    android:singleLine="true" />
+
+                            </android.support.design.widget.TextInputLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="visible"
+                                android:layout_weight="1">
+
+                                <EditText
+                                    android:id="@+id/et_referenceNo"
+                                    android:inputType="numberDecimal"
+                                    android:textColorHint="@color/colorPrimary"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:hint="Ref No.(Optional)"
+                                    android:textSize="16dp" />
+                            </android.support.design.widget.TextInputLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </android.support.v4.widget.NestedScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_edit_delete"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:visibility="gone"
+            android:background="#fff"
+            android:id="@+id/btnDeleteOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="DELETE"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:visibility="gone"
+            android:background="@color/colorPrimary"
+            android:id="@+id/btnEditOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="EDIT"
+            android:textColor="#fff" />
+
+        <Button
+            android:background="#fff"
+            android:id="@+id/btnCancelOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CANCEL"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:background="@color/colorPrimary"
+            android:id="@+id/btnSaveOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SAVE"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/pb_category_list"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</android.support.design.widget.CoordinatorLayout>

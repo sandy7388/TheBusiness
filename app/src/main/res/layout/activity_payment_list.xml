@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:id="@+id/toolbar_payment_list"
+            layout="@layout/toolbar_common"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_marginTop="05dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:imeOptions="actionSearch"
+                android:textSize="16dp"
+                android:gravity="top"
+                android:text=""
+                android:inputType="text"
+                android:singleLine="true"
+                android:id="@+id/edt_search_customer"
+                android:layout_margin="05dp"
+                android:hint="Enter Customer Name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_party_payment"
+            android:layout_below="@id/toolbar_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+    </LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fb_invoice_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_margin="11dp"
+        android:src="@drawable/fab_add_icon"
+        android:visibility="visible"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="normal" />
+
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/pb_list_payment"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</android.support.design.widget.CoordinatorLayout>
